@@ -1,37 +1,21 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { APITester } from "./APITester";
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { StatsDisplay } from "./StatsDisplay";
 import "../index.css";
-
-import logo from "../assets/logo.svg";
-import reactLogo from "../assets/react.svg";
 
 export function App() {
   return (
-    <div className="container mx-auto p-8 text-center relative z-10">
-      <div className="flex justify-center items-center gap-8 mb-8">
-        <img
-          src={logo}
-          alt="Bun Logo"
-          className="h-36 p-6 transition-all duration-300 hover:drop-shadow-[0_0_2em_#646cffaa] scale-120"
-        />
-        <img
-          src={reactLogo}
-          alt="React Logo"
-          className="h-36 p-6 transition-all duration-300 hover:drop-shadow-[0_0_2em_#61dafbaa] [animation:spin_20s_linear_infinite]"
-        />
+    <div className="container mx-auto p-8 relative z-10">
+      <div className="space-y-6">
+        <Card className="mb-8">
+          <CardHeader className="gap-4 text-center">
+            <CardTitle className="text-3xl font-bold">Home Server Monitor</CardTitle>
+            <CardDescription>
+              Real-time system statistics and performance metrics
+            </CardDescription>
+          </CardHeader>
+        </Card>
+        <StatsDisplay />
       </div>
-      <Card>
-        <CardHeader className="gap-4">
-          <CardTitle className="text-3xl font-bold">Bun + React</CardTitle>
-          <CardDescription>
-            Edit <code className="rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono">src/App.tsx</code> and save to
-            test HMR
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <APITester />
-        </CardContent>
-      </Card>
     </div>
   );
 }

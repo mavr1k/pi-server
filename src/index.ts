@@ -1,11 +1,11 @@
 import { serve } from "bun";
 import index from "./index.html";
+import { getStats } from "./lib/system";
 
 const server = serve({
   routes: {
     // Serve index.html for all unmatched routes.
     "/*": index,
-
     "/api/hello": {
       async GET(req) {
         return Response.json({
@@ -20,13 +20,16 @@ const server = serve({
         });
       },
     },
-
     "/api/hello/:name": async req => {
       const name = req.params.name;
       return Response.json({
         message: `Hello, ${name}!`,
       });
     },
+    "/api/stats": async () => {
+      const stats = await getStats();
+      return Response.json(stats);
+    }
   },
 
   development: process.env.NODE_ENV !== "production" && {
