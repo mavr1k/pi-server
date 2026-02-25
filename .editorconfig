@@ -1,0 +1,32 @@
+# EditorConfig helps maintain consistent coding styles across different editors
+# https://editorconfig.org
+
+root = true
+
+[*]
+# Unix-style line endings
+end_of_line = lf
+# Ensure files end with a newline
+insert_final_newline = true
+# Remove trailing whitespace
+trim_trailing_whitespace = true
+# UTF-8 encoding
+charset = utf-8
+# Indentation
+indent_style = space
+indent_size = 2
+
+[*.md]
+# Markdown files may have intentional trailing spaces
+trim_trailing_whitespace = false
+
+[{Makefile,makefile}]
+# Makefiles require tabs
+indent_style = tab
+indent_size = 4
+
+[*.{json,jsonc}]
+indent_size = 2
+
+[*.{yaml,yml}]
+indent_size = 2

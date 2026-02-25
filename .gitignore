@@ -27,8 +27,14 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 .cache
 *.tsbuildinfo
 
+# Biome cache
+.biome_cache
+
 # IntelliJ based IDEs
 .idea
 
 # Finder (MacOS) folder config
 .DS_Store
+
+# OS
+Thumbs.db
